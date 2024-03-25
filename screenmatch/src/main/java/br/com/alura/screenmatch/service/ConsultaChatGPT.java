@@ -1,11 +1,10 @@
 package br.com.alura.screenmatch.service;
-
 import com.theokanning.openai.completion.CompletionRequest;
 import com.theokanning.openai.service.OpenAiService;
 
 public class ConsultaChatGPT {
     public static String obterTraducao(String texto) {
-        OpenAiService service = new OpenAiService("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");
+        OpenAiService service = new OpenAiService(System.getenv("OPENAI_KEY"));
 
         CompletionRequest requisicao = CompletionRequest.builder()
                 .model("gpt-3.5-turbo-instruct")
